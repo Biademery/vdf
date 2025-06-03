@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://b306hcm8prevy"]
+
+[ext_resource type="Script" uid="uid://cj807re3pi05p" path="res://scripts/maquina.gd" id="1_48kjj"]
+[ext_resource type="Texture2D" uid="uid://jjk1exjmacd" path="res://assets/loja/machine.png" id="1_qed2k"]
+[ext_resource type="Texture2D" uid="uid://0j55q0go3u3l" path="res://assets/Tiles/Keys (1).png" id="3_uj6k6"]
+[ext_resource type="Texture2D" uid="uid://dlwhdbar451hu" path="res://assets/loja/quebrada.png" id="4_uj6k6"]
+[ext_resource type="AudioStream" uid="uid://c58hthvbkak1e" path="res://assets/sons/efeitosSonoros/breakmachine.wav" id="5_shh73"]
+[ext_resource type="AudioStream" uid="uid://cuabo4wq71gsn" path="res://assets/sons/efeitosSonoros/caught.wav" id="6_fxt2p"]
+[ext_resource type="AudioStream" uid="uid://c5krmbcytnifa" path="res://assets/sons/efeitosSonoros/shopsound.wav" id="7_u4fid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhlcm"]
+size = Vector2(55, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoh4r"]
+atlas = ExtResource("3_uj6k6")
+region = Rect2(60, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shh73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoh4r")
+}],
+"loop": true,
+"name": &"letras",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxt2p"]
+size = Vector2(305.555, 322.156)
+
+[node name="maquina" type="StaticBody2D"]
+z_index = 10
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_48kjj")
+
+[node name="NormalMachine" type="Sprite2D" parent="."]
+position = Vector2(-7, 1)
+scale = Vector2(0.10773, 0.112459)
+texture = ExtResource("1_qed2k")
+
+[node name="BrokeMachine" type="Sprite2D" parent="."]
+position = Vector2(-7.5, 1.66667)
+scale = Vector2(0.0672596, 0.0666397)
+texture = ExtResource("4_uj6k6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, -5)
+shape = SubResource("RectangleShape2D_mhlcm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7.5, 2.5)
+scale = Vector2(0.0779545, 0.0753988)
+sprite_frames = SubResource("SpriteFrames_shh73")
+animation = &"letras"
+
+[node name="upgrade" type="Area2D" parent="."]
+position = Vector2(-240, -239)
+scale = Vector2(0.18, 0.18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="upgrade"]
+position = Vector2(1302.78, 1383.3)
+shape = SubResource("RectangleShape2D_fxt2p")
+
+[node name="Custo" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -67.5
+offset_right = 28.0
+offset_bottom = -39.5
+theme_override_font_sizes/font_size = 20
+text = "custo"
+
+[node name="SoundQuebrada" type="AudioStreamPlayer2D" parent="."]
+z_as_relative = false
+stream = ExtResource("5_shh73")
+
+[node name="semDinheiro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_fxt2p")
+
+[node name="gastarDinheiro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_u4fid")
+
+[connection signal="body_entered" from="upgrade" to="." method="_on_upgrade_body_entered"]
+[connection signal="body_exited" from="upgrade" to="." method="_on_upgrade_body_exited"]

@@ -1,0 +1,445 @@
+[gd_scene load_steps=33 format=3 uid="uid://d2x6f1et6s431"]
+
+[ext_resource type="Script" uid="uid://bpedmyigbpcjn" path="res://scripts/menu_loja.gd" id="1_83b37"]
+[ext_resource type="Texture2D" uid="uid://jjk1exjmacd" path="res://assets/loja/machine.png" id="2_wvgtu"]
+[ext_resource type="Texture2D" uid="uid://f6gyko0pqje2" path="res://assets/Tiles/Interiors_free_16x16.png" id="3_1h03y"]
+[ext_resource type="FontFile" uid="uid://cccx1nnbw8b8g" path="res://assets/fontes/Chewy Bubble.otf" id="3_csslw"]
+[ext_resource type="Texture2D" uid="uid://clnowqv6j60k1" path="res://assets/loja/police_idle_frame_1.png" id="4_csslw"]
+[ext_resource type="Texture2D" uid="uid://b82bgb213q1ue" path="res://assets/loja/Spritesheet_Heart.png" id="5_l4exj"]
+[ext_resource type="Texture2D" uid="uid://41cjeyqlax3d" path="res://assets/arma/arma.png" id="6_mgg5n"]
+[ext_resource type="Texture2D" uid="uid://gqpjol3fkwtt" path="res://assets/animations/heart-pulse.png" id="7_yh1v0"]
+[ext_resource type="Texture2D" uid="uid://v46k5qd4godj" path="res://assets/animations/Coin.png" id="8_2rato"]
+[ext_resource type="Texture2D" uid="uid://d3mwaqq1fqrqt" path="res://assets/loja/relogio.png" id="8_l4exj"]
+[ext_resource type="AudioStream" uid="uid://c5krmbcytnifa" path="res://assets/sons/efeitosSonoros/shopsound.wav" id="9_wvgtu"]
+[ext_resource type="PackedScene" uid="uid://dclcdgmpsh6r1" path="res://cenas/confirmar_compra.tscn" id="11_mgg5n"]
+[ext_resource type="AudioStream" uid="uid://cuabo4wq71gsn" path="res://assets/sons/efeitosSonoros/caught.wav" id="12_l4exj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqvx8"]
+atlas = ExtResource("3_1h03y")
+region = Rect2(64, 1136, 48, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmdkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqvx8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqmbe"]
+atlas = ExtResource("5_l4exj")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u47yx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqmbe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwmm0"]
+atlas = ExtResource("7_yh1v0")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rk5i"]
+atlas = ExtResource("7_yh1v0")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0168"]
+atlas = ExtResource("7_yh1v0")
+region = Rect2(30, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbab8"]
+atlas = ExtResource("7_yh1v0")
+region = Rect2(45, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irqcw"]
+atlas = ExtResource("7_yh1v0")
+region = Rect2(60, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj7ex"]
+atlas = ExtResource("7_yh1v0")
+region = Rect2(75, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ayiah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwmm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rk5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0168")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbab8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irqcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj7ex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp7b7"]
+atlas = ExtResource("8_2rato")
+region = Rect2(0, 0, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnc2j"]
+atlas = ExtResource("8_2rato")
+region = Rect2(800, 0, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrqor"]
+atlas = ExtResource("8_2rato")
+region = Rect2(1600, 0, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykx50"]
+atlas = ExtResource("8_2rato")
+region = Rect2(0, 800, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyk13"]
+atlas = ExtResource("8_2rato")
+region = Rect2(800, 800, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxxe8"]
+atlas = ExtResource("8_2rato")
+region = Rect2(1600, 800, 800, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xak5u"]
+atlas = ExtResource("8_2rato")
+region = Rect2(0, 1600, 800, 800)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3q0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp7b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnc2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrqor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykx50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyk13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxxe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xak5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Menu_loja" type="StaticBody2D" node_paths=PackedStringArray("botao_item_1")]
+script = ExtResource("1_83b37")
+botao_item_1 = NodePath("item1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 260.0
+offset_bottom = 147.0
+color = Color(0.52549, 0.301961, 0.192157, 0.0823529)
+
+[node name="item1" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 62.0
+offset_bottom = 66.0
+
+[node name="Sprite2D" type="Sprite2D" parent="item1"]
+position = Vector2(19.4375, 18.5)
+scale = Vector2(0.041324, 0.0411184)
+texture = ExtResource("2_wvgtu")
+
+[node name="valor" type="Label" parent="item1"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 41.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "FO$ 100"
+
+[node name="quantia" type="Label" parent="item1"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 41.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+ 1"
+horizontal_alignment = 1
+
+[node name="item2" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 21.0
+offset_right = 122.0
+offset_bottom = 66.0
+
+[node name="valor" type="Label" parent="item2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 41.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "FO$ 150"
+
+[node name="quantia" type="Label" parent="item2"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+5% FO"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="item2"]
+position = Vector2(21.75, 17.375)
+scale = Vector2(0.552083, 0.505556)
+sprite_frames = SubResource("SpriteFrames_bmdkq")
+
+[node name="item3" type="Button" parent="."]
+offset_left = 140.0
+offset_top = 21.0
+offset_right = 182.0
+offset_bottom = 66.0
+
+[node name="valor" type="Label" parent="item3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 41.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "FO$ 200"
+
+[node name="quantia" type="Label" parent="item3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+ 5%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="item3"]
+position = Vector2(22.8438, 22.25)
+scale = Vector2(0.0396729, 0.0258789)
+texture = ExtResource("4_csslw")
+
+[node name="item4" type="Button" parent="."]
+offset_left = 200.0
+offset_top = 21.0
+offset_right = 242.0
+offset_bottom = 66.0
+
+[node name="valor" type="Label" parent="item4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 41.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "FO$ 300"
+
+[node name="quantia" type="Label" parent="item4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+5 Vida"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="item4"]
+position = Vector2(20, 22.75)
+scale = Vector2(1.5, 1.09375)
+sprite_frames = SubResource("SpriteFrames_u47yx")
+
+[node name="item5" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 82.0
+offset_right = 62.0
+offset_bottom = 127.0
+
+[node name="Sprite2D" type="Sprite2D" parent="item5"]
+position = Vector2(25.25, 29.25)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("6_mgg5n")
+
+[node name="valor" type="Label" parent="item5"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 41.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "FO$ 200"
+
+[node name="quantia" type="Label" parent="item5"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+ 5 Dano"
+
+[node name="item6" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 82.0
+offset_right = 122.0
+offset_bottom = 127.0
+
+[node name="valor" type="Label" parent="item6"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 41.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "R$ 8,99"
+horizontal_alignment = 1
+
+[node name="quantia" type="Label" parent="item6"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+ 30 seg"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="item6"]
+position = Vector2(21, 23)
+scale = Vector2(0.0242188, 0.020625)
+texture = ExtResource("8_l4exj")
+
+[node name="item7" type="Button" parent="."]
+offset_left = 140.0
+offset_top = 82.0
+offset_right = 182.0
+offset_bottom = 127.0
+
+[node name="valor" type="Label" parent="item7"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 45.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "R$ 9,99"
+
+[node name="quantia" type="Label" parent="item7"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 39.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+ 10"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="item7"]
+position = Vector2(21, 23)
+scale = Vector2(1.425, 1.125)
+sprite_frames = SubResource("SpriteFrames_ayiah")
+frame_progress = 0.427078
+
+[node name="item8" type="Button" parent="."]
+offset_left = 200.0
+offset_top = 82.0
+offset_right = 242.0
+offset_bottom = 127.0
+
+[node name="Label6" type="Label" parent="item8"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 31.0
+offset_right = 42.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "R$ 5,99"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="item8"]
+position = Vector2(20, 23)
+scale = Vector2(0.030625, 0.026875)
+sprite_frames = SubResource("SpriteFrames_f3q0d")
+frame_progress = 0.591771
+
+[node name="Label5" type="Label" parent="item8"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 10
+text = "+ 100"
+horizontal_alignment = 1
+
+[node name="ConfirmarCompra" parent="item8" instance=ExtResource("11_mgg5n")]
+
+[node name="buying" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wvgtu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 244.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("3_csslw")
+theme_override_font_sizes/font_size = 20
+text = "dinheiro insuficiente"
+
+[node name="Timer" type="Timer" parent="Label"]
+wait_time = 3.0
+
+[node name="sem_dinheiro" type="AudioStreamPlayer2D" parent="Label"]
+stream = ExtResource("12_l4exj")
+
+[connection signal="pressed" from="item1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="item2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="item3" to="." method="_on_item_3_pressed"]
+[connection signal="pressed" from="item4" to="." method="_on_item_4_pressed"]
+[connection signal="pressed" from="item5" to="." method="_on_item_5_pressed"]
+[connection signal="pressed" from="item6" to="." method="_on_item_6_pressed"]
+[connection signal="pressed" from="item7" to="." method="_on_item_7_pressed"]
+[connection signal="pressed" from="item8" to="." method="_on_item_8_pressed"]

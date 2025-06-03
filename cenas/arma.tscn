@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfu6xxdbood5c"]
+
+[ext_resource type="Script" uid="uid://c8bg5qh5a4xup" path="res://scripts/arma.gd" id="1_qh7hn"]
+[ext_resource type="Texture2D" uid="uid://41cjeyqlax3d" path="res://assets/arma/arma.png" id="1_qsbbb"]
+[ext_resource type="AudioStream" uid="uid://dbmhmrfa1fwpy" path="res://assets/sons/efeitosSonoros/gunshot.wav" id="3_e7e0g"]
+
+[node name="arma" type="Node2D"]
+script = ExtResource("1_qh7hn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 1)
+scale = Vector2(0.145508, 0.145508)
+texture = ExtResource("1_qsbbb")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="GunShot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e7e0g")
+volume_db = -16.679

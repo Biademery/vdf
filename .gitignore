@@ -1,0 +1,23 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Arquivos temporários do Godot
+.import/
+.export/
+*.import
+
+# Configurações locais e caches
+*.cfg
+*.cache
+
+# Arquivos binários
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+
+# Pastas específicas do sistema operacional
+.DS_Store
+Thumbs.db

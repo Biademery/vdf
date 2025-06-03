@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfly5epjekyjc"]
+
+[ext_resource type="Script" uid="uid://docvbecb1nmox" path="res://scripts/popup_panel.gd" id="1_2mv2t"]
+[ext_resource type="Texture2D" uid="uid://ct3er3mtxvrrl" path="res://assets/logos/bg.jpg" id="2_cusba"]
+[ext_resource type="FontFile" uid="uid://cccx1nnbw8b8g" path="res://assets/fontes/Chewy Bubble.otf" id="3_cbkqb"]
+
+[node name="PopupPanel" type="PopupPanel"]
+transparent_bg = false
+handle_input_locally = false
+mode = 2
+initial_position = 1
+size = Vector2i(400, 400)
+visible = true
+script = ExtResource("1_2mv2t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.356863, 0.188235, 0.184314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(109, 178)
+scale = Vector2(0.451562, 0.461458)
+texture = ExtResource("2_cusba")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 396.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_cbkqb")
+theme_override_font_sizes/font_size = 20
+text = "Inicio"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.356863, 0.188235, 0.184314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_cbkqb")
+theme_override_font_sizes/font_size = 20
+text = "Iniciar partida"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

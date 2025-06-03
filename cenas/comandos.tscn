@@ -1,0 +1,293 @@
+[gd_scene load_steps=23 format=3 uid="uid://bl2tikw1nlfhv"]
+
+[ext_resource type="Texture2D" uid="uid://ct3er3mtxvrrl" path="res://assets/logos/bg.jpg" id="1_npyy4"]
+[ext_resource type="Script" uid="uid://bc0fuypksfr1p" path="res://scripts/comandos.gd" id="1_sgh4h"]
+[ext_resource type="FontFile" uid="uid://cccx1nnbw8b8g" path="res://assets/fontes/Chewy Bubble.otf" id="2_0871b"]
+[ext_resource type="Texture2D" uid="uid://0j55q0go3u3l" path="res://assets/Tiles/Keys (1).png" id="3_pclr0"]
+[ext_resource type="Texture2D" uid="uid://b2keynl6lnjmd" path="res://assets/icones/icons8-seta-para-a-frente-24.png" id="4_oc1dq"]
+[ext_resource type="Texture2D" uid="uid://bu6rwu0ko4wyt" path="res://assets/Tiles/barra.png" id="5_c4qx2"]
+[ext_resource type="Texture2D" uid="uid://bljregp4ujihn" path="res://assets/icones/icons8-abaixo-24.png" id="5_sgh4h"]
+[ext_resource type="Texture2D" uid="uid://ce0a2k3fxu6au" path="res://assets/icones/icons8-seta-responder-24.png" id="6_kerrl"]
+[ext_resource type="AudioStream" uid="uid://b5sgcdk4vebv4" path="res://assets/sons/musicas/darkinicial.wav" id="8_kerrl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afd8d"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w38no"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(15, 80, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwrgs"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(45, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3n0j"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(30, 80, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kerrl"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(60, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4qx2"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(15, 32, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxeh6"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(15, 48, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67urh"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(45, 48, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh2at"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(45, 80, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0n8w"]
+atlas = ExtResource("5_c4qx2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry0hn"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(30, 64, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xteer"]
+atlas = ExtResource("3_pclr0")
+region = Rect2(60, 80, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3ptp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afd8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w38no")
+}],
+"loop": true,
+"name": &"a",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwrgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3n0j")
+}],
+"loop": true,
+"name": &"d",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kerrl")
+}],
+"loop": true,
+"name": &"e",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4qx2")
+}],
+"loop": true,
+"name": &"l",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxeh6")
+}],
+"loop": true,
+"name": &"q",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67urh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh2at")
+}],
+"loop": true,
+"name": &"s",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0n8w")
+}],
+"loop": true,
+"name": &"space",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry0hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xteer")
+}],
+"loop": true,
+"name": &"w",
+"speed": 1.0
+}]
+
+[node name="comandos" type="Node2D"]
+script = ExtResource("1_sgh4h")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(512, 168)
+texture = ExtResource("1_npyy4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 195.0
+offset_top = 58.0
+offset_right = 945.0
+offset_bottom = 555.0
+color = Color(0.356863, 0.188235, 0.184314, 1)
+
+[node name="comandos" type="Label" parent="."]
+offset_left = 464.0
+offset_top = 72.0
+offset_right = 666.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("2_0871b")
+theme_override_font_sizes/font_size = 40
+text = "comandos"
+
+[node name="a" type="AnimatedSprite2D" parent="."]
+position = Vector2(551, 262)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"a"
+autoplay = "a"
+frame_progress = 0.708261
+
+[node name="w" type="AnimatedSprite2D" parent="."]
+position = Vector2(461, 348)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"w"
+autoplay = "w"
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+position = Vector2(551, 347)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"s"
+autoplay = "s"
+frame_progress = 0.404479
+
+[node name="d" type="AnimatedSprite2D" parent="."]
+position = Vector2(641, 346)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"d"
+autoplay = "d"
+
+[node name="l" type="AnimatedSprite2D" parent="."]
+position = Vector2(786, 297)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"l"
+
+[node name="q" type="AnimatedSprite2D" parent="."]
+position = Vector2(461, 262)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"q"
+
+[node name="space" type="AnimatedSprite2D" parent="."]
+position = Vector2(553, 432)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"space"
+
+[node name="atirar" type="Label" parent="."]
+offset_left = 673.0
+offset_top = 188.0
+offset_right = 738.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0871b")
+theme_override_font_sizes/font_size = 20
+text = "Atirar"
+
+[node name="loja" type="Label" parent="."]
+offset_left = 734.0
+offset_top = 365.0
+offset_right = 840.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0871b")
+theme_override_font_sizes/font_size = 20
+text = "abrir loja"
+
+[node name="upgrade" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 188.0
+offset_right = 436.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0871b")
+theme_override_font_sizes/font_size = 20
+text = "Upgrade / Conserto"
+
+[node name="space2" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 484.0
+offset_right = 710.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0871b")
+theme_override_font_sizes/font_size = 20
+text = "Entrar nos predios"
+
+[node name="seta" type="Sprite2D" parent="."]
+position = Vector2(652, 208)
+scale = Vector2(1.25, 1)
+texture = ExtResource("4_oc1dq")
+
+[node name="seta2" type="Sprite2D" parent="."]
+position = Vector2(787, 357)
+scale = Vector2(1.25, 1.08333)
+texture = ExtResource("5_sgh4h")
+
+[node name="seta4" type="Sprite2D" parent="."]
+position = Vector2(487, 494)
+rotation = -3.14159
+scale = Vector2(1.25, 1.08333)
+texture = ExtResource("6_kerrl")
+
+[node name="seta3" type="Sprite2D" parent="."]
+position = Vector2(452, 206.878)
+scale = Vector2(1.221, 0.9065)
+texture = ExtResource("6_kerrl")
+
+[node name="e" type="AnimatedSprite2D" parent="."]
+position = Vector2(641, 262)
+scale = Vector2(4.95, 4.4375)
+sprite_frames = SubResource("SpriteFrames_t3ptp")
+animation = &"e"
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_kerrl")
+
+[node name="Voltar" type="Button" parent="."]
+offset_left = 209.0
+offset_top = 484.0
+offset_right = 354.0
+offset_bottom = 547.0
+theme_override_colors/font_hover_color = Color(0.121569, 0.0431373, 0.0470588, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0871b")
+theme_override_font_sizes/font_size = 40
+text = "Voltar"
+flat = true
+
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

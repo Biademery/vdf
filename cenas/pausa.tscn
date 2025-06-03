@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://b423wrxifdtlc"]
+
+[ext_resource type="Script" uid="uid://05u77mpn27co" path="res://scripts/pausa.gd" id="1_vaxn3"]
+[ext_resource type="FontFile" uid="uid://cccx1nnbw8b8g" path="res://assets/fontes/Chewy Bubble.otf" id="2_17j4v"]
+[ext_resource type="Texture2D" uid="uid://ct3er3mtxvrrl" path="res://assets/logos/bg.jpg" id="2_gpnb3"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_17j4v"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_gpnb3"]
+events = [SubResource("InputEventAction_17j4v")]
+
+[node name="pausa" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_vaxn3")
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.756863)
+position = Vector2(510, 168)
+texture = ExtResource("2_gpnb3")
+
+[node name="menu_pausado" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="menu" type="VBoxContainer" parent="menu_pausado"]
+process_mode = 3
+layout_mode = 0
+offset_left = 411.0
+offset_top = 266.0
+offset_right = 708.0
+offset_bottom = 463.0
+
+[node name="retomar" type="Button" parent="menu_pausado/menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.356863, 0.188235, 0.184314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_17j4v")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_gpnb3")
+text = "retomar"
+flat = true
+
+[node name="reiniciar" type="Button" parent="menu_pausado/menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.356863, 0.188235, 0.184314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_17j4v")
+theme_override_font_sizes/font_size = 40
+text = "reiniciar"
+flat = true
+
+[node name="sair" type="Button" parent="menu_pausado/menu"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.356863, 0.188235, 0.184314, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_17j4v")
+theme_override_font_sizes/font_size = 40
+text = "Sair"
+flat = true
+
+[connection signal="pressed" from="menu_pausado/menu/retomar" to="." method="_on_pausa_pressed"]
+[connection signal="pressed" from="menu_pausado/menu/reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="menu_pausado/menu/sair" to="." method="_on_sair_pressed"]

@@ -1,0 +1,171 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnxt6owsa24dc"]
+
+[ext_resource type="PackedScene" uid="uid://dywhx6y6i1h0p" path="res://cenas/cenario.tscn" id="1_ln3fj"]
+[ext_resource type="Script" uid="uid://dfb1qfknx61x7" path="res://scripts/mundo.gd" id="1_rdm2e"]
+[ext_resource type="PackedScene" uid="uid://cc2456cdqc5fv" path="res://cenas/davi.tscn" id="2_hbp8a"]
+[ext_resource type="PackedScene" uid="uid://cuite823gsepa" path="res://cenas/porta.tscn" id="3_hbp8a"]
+[ext_resource type="PackedScene" uid="uid://c8qugr45sgdmw" path="res://cenas/inimigo.tscn" id="3_tqoxo"]
+[ext_resource type="PackedScene" uid="uid://blg3xt5hwla45" path="res://cenas/porta_saida.tscn" id="4_hnnuc"]
+[ext_resource type="PackedScene" uid="uid://do8tjx400dtwp" path="res://cenas/dinheiro.tscn" id="7_bo0jt"]
+[ext_resource type="AudioStream" uid="uid://c5krmbcytnifa" path="res://assets/sons/efeitosSonoros/shopsound.wav" id="9_i5d5d"]
+[ext_resource type="AudioStream" uid="uid://b5sgcdk4vebv4" path="res://assets/sons/musicas/darkinicial.wav" id="10_pfgfe"]
+[ext_resource type="PackedScene" uid="uid://b423wrxifdtlc" path="res://cenas/pausa.tscn" id="11_esbpk"]
+[ext_resource type="PackedScene" uid="uid://dfly5epjekyjc" path="res://cenas/popup_panel.tscn" id="12_puycu"]
+
+[node name="mundo" type="Node2D"]
+script = ExtResource("1_rdm2e")
+
+[node name="cenario" parent="." instance=ExtResource("1_ln3fj")]
+
+[node name="davi" parent="." instance=ExtResource("2_hbp8a")]
+z_index = 2
+position = Vector2(546, 530)
+scale = Vector2(2.5, 2.5)
+
+[node name="Camera2D" type="Camera2D" parent="davi"]
+position = Vector2(-303.5, -278.5)
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 3552
+editor_draw_limits = true
+
+[node name="meu_cassino" type="Node" parent="."]
+
+[node name="porta_meu_cassino" parent="meu_cassino" instance=ExtResource("3_hbp8a")]
+position = Vector2(172, 340)
+_teleport_position = Vector2(661, 2341)
+
+[node name="porta_saida_meucassino" parent="meu_cassino" instance=ExtResource("4_hnnuc")]
+position = Vector2(663, 2366)
+_teleport_position = Vector2(407, 530)
+
+[node name="camera_interior" type="Camera2D" parent="meu_cassino"]
+position = Vector2(660, 2111)
+limit_left = 84
+limit_top = 1787
+limit_right = 1236
+limit_bottom = 2435
+editor_draw_limits = true
+
+[node name="loja" type="Node" parent="."]
+
+[node name="porta_loja" parent="loja" instance=ExtResource("3_hbp8a")]
+position = Vector2(783, 340)
+_teleport_position = Vector2(2705, 2240)
+
+[node name="porta_saida_loja" parent="loja" instance=ExtResource("4_hnnuc")]
+position = Vector2(2704, 2265)
+_teleport_position = Vector2(1024, 530)
+
+[node name="Camera_loja" type="Camera2D" parent="loja"]
+position = Vector2(2708, 2083)
+limit_left = 2149
+limit_top = 1753
+limit_right = 3301
+limit_bottom = 2401
+editor_draw_limits = true
+
+[node name="cassino_vicent" type="Node" parent="."]
+
+[node name="Camera_vincent" type="Camera2D" parent="cassino_vicent"]
+position = Vector2(1413, 1191)
+limit_left = 837
+limit_top = 867
+limit_right = 1989
+limit_bottom = 1514
+editor_draw_limits = true
+
+[node name="porta_vincent" parent="cassino_vicent" instance=ExtResource("3_hbp8a")]
+position = Vector2(1579, 342)
+_teleport_position = Vector2(1395, 1400)
+
+[node name="porta_saida_vincent" parent="cassino_vicent" instance=ExtResource("4_hnnuc")]
+position = Vector2(2694, 1456)
+_teleport_position = Vector2(1810, 530)
+
+[node name="cassino_luna" type="Node" parent="."]
+
+[node name="porta_luna" parent="cassino_luna" instance=ExtResource("3_hbp8a")]
+position = Vector2(2173, 340)
+_teleport_position = Vector2(2690, 1426)
+
+[node name="porta_saida_luna" parent="cassino_luna" instance=ExtResource("4_hnnuc")]
+position = Vector2(1397, 1425)
+_teleport_position = Vector2(2409, 530)
+
+[node name="Camera_luna" type="Camera2D" parent="cassino_luna"]
+position = Vector2(2708, 1207)
+
+[node name="cassino_henrique" type="Node" parent="."]
+
+[node name="porta_henrique" parent="cassino_henrique" instance=ExtResource("3_hbp8a")]
+position = Vector2(2745, 345)
+_teleport_position = Vector2(147, 1391)
+
+[node name="porta_saida_henrique" parent="cassino_henrique" instance=ExtResource("4_hnnuc")]
+position = Vector2(142, 1421)
+_teleport_position = Vector2(2977, 530)
+
+[node name="Camera_henrique" type="Camera2D" parent="cassino_henrique"]
+position = Vector2(156, 1195)
+limit_left = -420
+limit_top = 871
+limit_right = 732
+limit_bottom = 1519
+editor_draw_limits = true
+
+[node name="inimigo" parent="." instance=ExtResource("3_tqoxo")]
+position = Vector2(1236, 534)
+scale = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dinheiro" parent="CanvasLayer" instance=ExtResource("7_bo0jt")]
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 177.0
+offset_bottom = 44.0
+
+[node name="Tempo" type="Label" parent="CanvasLayer"]
+offset_left = 5.0
+offset_top = 38.0
+offset_right = 59.0
+offset_bottom = 61.0
+text = "Tempo"
+
+[node name="Shopsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_i5d5d")
+
+[node name="musicaInicial" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pfgfe")
+
+[node name="pausa" parent="." instance=ExtResource("11_esbpk")]
+
+[node name="PopupPanel" parent="." instance=ExtResource("12_puycu")]
+
+[connection signal="body_entered" from="meu_cassino/porta_meu_cassino" to="davi" method="_on_porta_body_entered"]
+[connection signal="body_exited" from="meu_cassino/porta_meu_cassino" to="davi" method="_on_porta_body_exited"]
+[connection signal="body_entered" from="meu_cassino/porta_saida_meucassino" to="davi" method="_on_porta_saida_body_entered"]
+[connection signal="body_entered" from="meu_cassino/porta_saida_meucassino" to="meu_cassino/porta_saida_meucassino" method="_on_body_entered"]
+[connection signal="body_exited" from="meu_cassino/porta_saida_meucassino" to="davi" method="_on_porta_saida_body_exited"]
+[connection signal="body_entered" from="loja/porta_loja" to="davi" method="_on_porta_loja_body_entered"]
+[connection signal="body_exited" from="loja/porta_loja" to="davi" method="_on_porta_loja_body_exited"]
+[connection signal="body_entered" from="loja/porta_saida_loja" to="davi" method="_on_porta_saida_body_entered"]
+[connection signal="body_entered" from="loja/porta_saida_loja" to="loja/porta_saida_loja" method="_on_body_entered"]
+[connection signal="body_exited" from="loja/porta_saida_loja" to="davi" method="_on_porta_saida_body_exited"]
+[connection signal="body_entered" from="cassino_vicent/porta_vincent" to="davi" method="_on_porta_vincent_body_entered"]
+[connection signal="body_exited" from="cassino_vicent/porta_vincent" to="davi" method="_on_porta_vincent_body_exited"]
+[connection signal="body_entered" from="cassino_vicent/porta_saida_vincent" to="davi" method="_on_porta_saida_body_entered"]
+[connection signal="body_entered" from="cassino_vicent/porta_saida_vincent" to="cassino_vicent/porta_saida_vincent" method="_on_body_entered"]
+[connection signal="body_exited" from="cassino_vicent/porta_saida_vincent" to="davi" method="_on_porta_saida_body_exited"]
+[connection signal="body_entered" from="cassino_luna/porta_luna" to="davi" method="_on_porta_luna_body_entered"]
+[connection signal="body_exited" from="cassino_luna/porta_luna" to="davi" method="_on_porta_luna_body_exited"]
+[connection signal="body_entered" from="cassino_luna/porta_saida_luna" to="davi" method="_on_porta_saida_body_entered"]
+[connection signal="body_entered" from="cassino_luna/porta_saida_luna" to="cassino_luna/porta_saida_luna" method="_on_body_entered"]
+[connection signal="body_exited" from="cassino_luna/porta_saida_luna" to="davi" method="_on_porta_saida_body_exited"]
+[connection signal="body_entered" from="cassino_henrique/porta_henrique" to="davi" method="_on_porta_henrique_body_entered"]
+[connection signal="body_exited" from="cassino_henrique/porta_henrique" to="davi" method="_on_porta_henrique_body_exited"]
+[connection signal="body_entered" from="cassino_henrique/porta_saida_henrique" to="davi" method="_on_porta_saida_body_entered"]
+[connection signal="body_entered" from="cassino_henrique/porta_saida_henrique" to="cassino_henrique/porta_saida_henrique" method="_on_body_entered"]
+[connection signal="body_exited" from="cassino_henrique/porta_saida_henrique" to="davi" method="_on_porta_saida_body_exited"]

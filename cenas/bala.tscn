@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2gmsm1lsp8us"]
+
+[ext_resource type="Texture2D" uid="uid://rnotej2kd8ia" path="res://assets/arma/bala.png" id="1_mk5qm"]
+[ext_resource type="Script" uid="uid://c5sp6ygsbi0eh" path="res://scripts/bala.gd" id="1_selws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_selws"]
+size = Vector2(6, 2)
+
+[node name="bala" type="Area2D"]
+script = ExtResource("1_selws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mk5qm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_selws")

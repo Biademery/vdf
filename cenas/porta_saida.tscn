@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blg3xt5hwla45"]
+
+[ext_resource type="Script" uid="uid://cg3hl8vj8f2p7" path="res://scripts/porta_saida.gd" id="1_qhm0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1klx"]
+size = Vector2(67, 30)
+
+[node name="porta_saida" type="Area2D"]
+script = ExtResource("1_qhm0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_n1klx")

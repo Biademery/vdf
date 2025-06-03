@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp1e5fe5v4ero"]
+
+[ext_resource type="Texture2D" uid="uid://dlq4cewmvnj4h" path="res://assets/loja/bar.png" id="1_cvfo1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvfo1"]
+size = Vector2(195, 154.5)
+
+[node name="bar" type="StaticBody2D"]
+rotation = -6.28319
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-48, 53.5)
+scale = Vector2(1.75, 1.83594)
+texture = ExtResource("1_cvfo1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-46.5, 35.75)
+shape = SubResource("RectangleShape2D_cvfo1")
